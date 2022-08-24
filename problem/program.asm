@@ -1,12 +1,12 @@
-/*@70          //Numero de letra que pone negra la pantalla
-D=A           
-@0
-M=D          // Declara variable, se almacena 70 en posicion 0
-@67          //Numero de letra que limpia la pantalla
-D=A
-@1
-M=D          // Declara variable, se almacena 67 en posicion 1
-*/
+//@70          //Numero de letra que pone negra la pantalla
+//D=A           
+//@0
+//M=D          // Declara variable, se almacena 70 en posicion 0
+//@67          //Numero de letra que limpia la pantalla
+//D=A
+//@1
+//M=D          // Declara variable, se almacena 67 en posicion 1
+
 (START)			
 	@KBD     //Casilla lectura de tecla
 	D=M          // se almacena en D la letra
