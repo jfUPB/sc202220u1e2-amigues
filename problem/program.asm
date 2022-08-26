@@ -7,48 +7,51 @@
 //@1
 //M=D          // Declara variable, se almacena 67 en posicion 1
 
-(START)			
-	@KBD     //Casilla lectura de tecla
-	D=M          // se almacena en D la letra
-	@FILLORCLEAR	
-	D;JNE           // si se esta presionando una tecla
+(START)
+			
+	@KBD     
+	D=M          
+	@FILLORCLEAR	// verificar si alguna tecla está presionada 
+	D;JNE           
 	@START          
-	0;JMP           // si no se esta presionando vuelve e inicia
+	0;JMP           
 
 (FILLORCLEAR)
 // if key = f --> draw else if key = c --> clear
 	@j
-	M = D // save key //Se almacena la letra en la casilla 16 RAM
+	M = D // Verificar que la misma tecla que está almacenada en la posicion 0 esta presionada
 	@0
-    A=M  // press f
+    A=M  
 	D = D-A
 	@FILL
 	D;JEQ
+
 	@j
 	D = M
 	@1
     A=M
-	D = D - A
-	@CLEAR
+	D = D - A //Revisa si la tecla presionada es la misma en la posición 1
+	@CLEAR  
 	D;JEQ
+
 	@START
-	0;JMP
+	0;JMP //While 
 
 (FILL)
 	@value
 	M = -1
-	@DRAW
+	@DRAW  
 	0;JMP
 
 (CLEAR)
 	@value
 	M = 0
-	@DRAW
+	@DRAW 
 	0;JMP
 
 (DRAW)
 	@SCREEN
-	D = A
+	D = A        //Se cambia de estado el primer pixel a -1
 	@i
 	M = D
 
